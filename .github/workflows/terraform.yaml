@@ -39,8 +39,7 @@ jobs:
         run: terraform plan -var "vpc_id=${{ env.VPC_ID }}" -var "subnet_id=${{ env.SUBNET_ID }}"
 
       - name: Terraform Apply
-        if: ${{ github.event.inputs.terraform_action }} == 'Apply'
-        if: github.ref == 'refs/heads/main'
+        if: ${{ github.event.inputs.terraform_action == 'Apply' && github.ref == 'refs/heads/main' }}
         run: terraform apply -var "vpc_id=${{ env.VPC_ID }}" -var "subnet_id=${{ env.SUBNET_ID }}" -auto-approve
 
       - name: Terraform Destroy

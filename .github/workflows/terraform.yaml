@@ -7,12 +7,11 @@ on:
 jobs:
   terraform:
     name: "Terraform"
-    env:
-        # AWS credentials
-        AWS_GITHUB_ACTIONS_TERRAFORM_SECRET_ACCESS_KEY_ID: ${{ secrets.AWS_GITHUB_ACTIONS_TERRAFORM_SECRET_ACCESS_KEY_ID }}
-        AWS_GITHUB_ACTIONS_TERRAFORM_SECRET_ACCESS_KEY: ${{ secrets.AWS_GITHUB_ACTIONS_TERRAFORM_SECRET_ACCESS_KEY }}
-        
     runs-on: ubuntu-latest
+
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     steps:
       # Checkout the repository to the GitHub Actions runner

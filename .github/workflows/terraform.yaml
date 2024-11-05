@@ -9,10 +9,10 @@ on:
      terraform_action:
         type: choice
         description: 'Select the Terraform action'
-          option:
-            - Apply
-            - Destroy
-          required: true
+        options:
+          - Apply
+          - Destroy
+        required: true
 
 jobs:
   terraform:

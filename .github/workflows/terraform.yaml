@@ -6,7 +6,7 @@ on:
     branches: ["main"]
   workflow_dispatch: # Allows manual triggering of the workflow
     inputs:
-     terraform_action:
+      terraform_action:
         type: choice
         description: 'Select the Terraform action'
         options:

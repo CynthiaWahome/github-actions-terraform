@@ -43,5 +43,5 @@ jobs:
         run: terraform apply -var "vpc_id=${{ env.VPC_ID }}" -var "subnet_id=${{ env.SUBNET_ID }}" -auto-approve
 
       - name: Terraform Destroy
-        if: ${{ github.event.inputs.terraform_action }} == 'Destroy'
+        if: ${{ github.event.inputs.terraform_action  == 'Destroy' }}
         run: terraform destroy -var "vpc_id=${{ env.VPC_ID }}" -var "subnet_id=${{ env.SUBNET_ID }}" -auto-approve
